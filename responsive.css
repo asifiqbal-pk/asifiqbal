@@ -1,40 +1,194 @@
-/* responsive.css - Responsive Styles */
+/* responsive.css - Adaptive Styles for All Devices */
 
-/* Skip link for accessibility */
-.skip-link {
-  position: absolute;
-  top: -11px;
-  left: 8px;
-  background: var(--brand);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: var(--radius);
-  z-index: 10000;
-  transition: top 0.3s ease;
-}
-
-.skip-link:focus {
-  top: 8px;
-}
-
-/* Mobile Styles (320px - 767px) */
-@media (max-width: 767px) {
-  /* Layout */
-  .mobile-header {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--sidebar-bg);
-    color: white;
-    padding: 1rem;
-    z-index: 1001;
-    box-shadow: var(--shadow-md);
-    height: 70px;
+/* =========================
+   MOBILE PORTRAIT ≤ 480px
+   ========================= */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
   }
 
+  .mobile-header {
+    display: flex;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    width: 75%;
+    top: 0;
+    bottom: 0;
+    border-radius: 0;
+    z-index: 1002;
+  }
+
+  .sidebar.sidebar-expanded {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1.25rem;
+  }
+
+  .hero {
+    padding: 2rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .content-card,
+  .competencies-section,
+  .quick-facts,
+  .education-section,
+  .certifications-section {
+    padding: 1.5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactmecard {
+    padding: 1.25rem;
+  }
+
+  #backToTop {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* =========================
+   MOBILE LANDSCAPE 481–767px
+   ========================= */
+@media (min-width: 481px) and (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 65%;
+  }
+
+  .sidebar.sidebar-expanded {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   TABLET PORTRAIT 768–991px
+   ========================= */
+@media (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 15px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+    padding: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .experience-entry {
+    padding: 2rem 1.5rem 2rem 4.5rem;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE 992–1199px
+   ========================= */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+    padding: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* =========================
+   DESKTOP ≥ 1200px
+   ========================= */
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+
+  .sidebar {
+    width: var(--sidebar-expanded);
+  }
+
+  .main-content {
+    margin-left: var(--sidebar-expanded);
+    padding: 2.5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  }
+}
   .mobile-title {
     font-size: 1rem;
     font-weight: 600;
