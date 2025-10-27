@@ -3,7 +3,7 @@
 /* Skip link for accessibility */
 .skip-link {
   position: absolute;
-  top: -11px;
+  top: -40px;
   left: 8px;
   background: var(--brand);
   color: white;
@@ -163,7 +163,7 @@
   .quick-facts {
     gap: 1rem;
     margin: auto 1rem 1.5rem;
-  }
+}
 
   .quick-facts-card {
     padding: 1.25rem 1rem;
@@ -171,16 +171,16 @@
 
   .quick-facts-card i {
     font-size: 2rem;
-  }
+}
 
   .quick-facts-card p {
     font-size: 0.85rem;
-  }
+}
 
   /* Experience Section Mobile */
   .experience-section {
     padding: 0.5rem;
-  }
+}
 
   .experience-section::before {
     left: 15px;
